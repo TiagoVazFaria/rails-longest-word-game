@@ -1,0 +1,12 @@
+<h1>Result</h1>
+
+<h2>Current Score = <%= session[:score] %></h2>
+<% if !@exists %>
+  <p>Sorry but <strong><%=@attempt%></strong> does not seem to be a valid english word...</p>
+<% elsif !@letter_confirm %>
+  <p>Sorry but <strong><%=@attempt%></strong> can't be built out of <%=params[:letters]%></p>
+<% else %>
+  <p>Congratulations! <strong><%=@attempt%></strong> is an english word!</p>
+  <% end %>
+
+<%= link_to 'Play Again', 'new' %>
